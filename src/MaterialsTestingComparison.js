@@ -695,9 +695,30 @@ export default function App() {
               </div>
             </div>
 
-            <AppButton theme={theme} onClick={toggleDarkMode}>
-              {isDarkMode ? "Light Mode" : "Dark Mode"}
-            </AppButton>
+<div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+  <a
+    href="https://ko-fi.com/edgeof3d"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      padding: "10px 14px",
+      borderRadius: 10,
+      border: `1px solid ${theme.border}`,
+      background: "#ff5f5f",
+      color: "#ffffff",
+      cursor: "pointer",
+      fontWeight: 700,
+      textDecoration: "none",
+      whiteSpace: "nowrap",
+    }}
+  >
+    Support Testing
+  </a>
+
+  <AppButton theme={theme} onClick={toggleDarkMode}>
+    {isDarkMode ? "Light Mode" : "Dark Mode"}
+  </AppButton>
+</div>
           </div>
         </div>
 
