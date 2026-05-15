@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import html2canvas from "html2canvas";
 import materialTestingData from "./data/materialTestingData";
 import polymerReferenceData from "./data/polymerReferenceData";
 
@@ -288,6 +289,24 @@ function SectionCard({ title, theme, rightContent, children }) {
   );
 }
 
+function downloadElementAsImage(element, filename, type = "png") {
+  if (!element) return;
+
+  html2canvas(element, {
+    backgroundColor: "#ffffff",
+    scale: 2,
+    useCORS: true,
+  }).then((canvas) => {
+    const mimeType = type === "jpg" ? "image/jpeg" : "image/png";
+    const outputUrl = canvas.toDataURL(mimeType, 0.95);
+
+    const link = document.createElement("a");
+    link.href = outputUrl;
+    link.download = `${filename}.${type}`;
+    link.click();
+  });
+}
+
 function downloadSvgAsImage(svgElement, filename, type = "png") {
   if (!svgElement) return;
 
@@ -452,6 +471,7 @@ function ComparisonView({
   const metricSet = getMetricSet(materialType);
   const [sortMode, setSortMode] = useState("Material");
   const [comparisonSearch, setComparisonSearch] = useState("");
+  const comparisonRef = useRef(null);
 
   const sortedMaterials = useMemo(() => {
     const filtered = materials.filter((item) => {
@@ -478,9 +498,39 @@ function ComparisonView({
     );
   };
 
-  return (
-    <SectionCard title="Comparison View" theme={theme}>
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(300px, 380px) 1fr", gap: 18 }}>
+return (
+  <SectionCard
+    title="Comparison View"
+    theme={theme}
+    rightContent={
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+        <AppButton
+          theme={theme}
+          onClick={() => downloadElementAsImage(comparisonRef.current, "materials-comparison", "png")}
+        >
+          Download PNG
+        </AppButton>
+
+        <AppButton
+          theme={theme}
+          onClick={() => downloadElementAsImage(comparisonRef.current, "materials-comparison", "jpg")}
+        >
+          Download JPG
+        </AppButton>
+      </div>
+    }
+  >
+      <div
+  ref={comparisonRef}
+  style={{
+    display: "grid",
+    gridTemplateColumns: "minmax(300px, 380px) 1fr",
+    gap: 18,
+    background: theme.surface,
+    color: theme.text,
+    padding: 12,
+  }}
+>
         <div
           style={{
             border: `1px solid ${theme.border}`,
