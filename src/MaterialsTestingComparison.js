@@ -392,7 +392,7 @@ function ChartView({
             const value = item[metricKey];
             const barWidth = value !== null ? (value / maxValue) * chartWidth : 0;
             const color = getMaterialColor(item, index);
-            const shortLabel = truncateText(buildShortChartLabel(item), 36);
+            const shortLabel = truncateText(buildShortChartLabel(item), 44);
 
             return (
               <g key={item._id}>
