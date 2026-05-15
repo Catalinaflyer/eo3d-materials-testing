@@ -173,6 +173,7 @@ function sanitizeBrand(brand = "") {
 function buildShortChartLabel(item) {
   const material = item.Material || "Unknown";
   const brand = sanitizeBrand(item.Brand || "");
+  const color = item.Color || "";
 
   let shortMaterial = material
     .replace(/^Fiberheart\s+/i, "")
@@ -181,11 +182,13 @@ function buildShortChartLabel(item) {
     .replace(/\s+/g, " ")
     .trim();
 
+  const colorText = color ? ` - ${color}` : "";
+
   if (brand) {
-    return `${shortMaterial} (${brand})`;
+    return `${shortMaterial}${colorText} (${brand})`;
   }
 
-  return shortMaterial;
+  return `${shortMaterial}${colorText}`;
 }
 
 function truncateText(text, maxLength = 34) {
