@@ -510,7 +510,7 @@ function ComparisonView({
               <input
                 value={comparisonSearch}
                 onChange={(e) => setComparisonSearch(e.target.value)}
-                placeholder="Material, brand, polymer, color..."
+                placeholder="Material or Brand"
                 style={inputStyle(theme)}
               />
             </label>
@@ -549,7 +549,7 @@ function ComparisonView({
                   <div>
                     <div style={{ fontWeight: 700 }}>{item.Material}</div>
                     <div style={{ color: theme.textSoft, fontSize: 13 }}>
-                      {(item.Brand || "Unknown brand") +
+                      {(item.Brand || "Unknown brand")
                     </div>
                   </div>
                 </label>
@@ -648,7 +648,7 @@ export default function App() {
   const filteredMaterials = useMemo(() => {
     return filteredByType.filter((item) => {
       const brandMatch = selectedBrand === "All" || item.Brand === selectedBrand;
-      const searchBlob = `${item.Material || ""} ${item.Brand || ""} ${item.Polymer || ""}`.toLowerCase();
+      const searchBlob = `${item.Material || ""} ${item.Brand || ""}`.toLowerCase();
       const searchMatch = !search.trim() || searchBlob.includes(search.trim().toLowerCase());
       return brandMatch && searchMatch;
     });
@@ -810,7 +810,7 @@ export default function App() {
                   <input
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Material, brand, polymer..."
+                    placeholder="Material or Brand"
                     style={inputStyle(theme)}
                   />
                 </label>
