@@ -549,7 +549,7 @@ function ComparisonView({
                   <div>
                     <div style={{ fontWeight: 700 }}>{item.Material}</div>
                     <div style={{ color: theme.textSoft, fontSize: 13 }}>
-                      {item.Brand || "Unknown brand"}
+                      {(item.Brand || "Unknown brand") + (item.Color ? ` · ${item.Color}` : "")}
                     </div>
                   </div>
                 </label>
@@ -566,7 +566,9 @@ function ComparisonView({
                 {selectedData.map((item) => (
                   <th key={item._id} style={thStyle(theme)}>
                     <div>{item.Material}</div>
-                    <div style={{ fontSize: 12, color: theme.textSoft, fontWeight: 500 }}>{item.Brand}</div>
+                    <div style={{ fontSize: 12, color: theme.textSoft, fontWeight: 500 }}>
+                      {(item.Brand || "Unknown brand") + (item.Color ? ` · ${item.Color}` : "")}
+                    </div>
                   </th>
                 ))}
               </tr>
@@ -686,7 +688,7 @@ export default function App() {
   const filteredMaterials = useMemo(() => {
     return filteredByType.filter((item) => {
       const brandMatch = selectedBrand === "All" || item.Brand === selectedBrand;
-      const searchBlob = `${item.Material || ""} ${item.Brand || ""}`.toLowerCase();
+      const searchBlob = `${item.Material || ""} ${item.Brand || ""} ${item.Color || ""}`.toLowerCase();
       const searchMatch = !search.trim() || searchBlob.includes(search.trim().toLowerCase());
       return brandMatch && searchMatch;
     });
