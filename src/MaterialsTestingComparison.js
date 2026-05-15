@@ -549,7 +549,7 @@ function ComparisonView({
                   <div>
                     <div style={{ fontWeight: 700 }}>{item.Material}</div>
                     <div style={{ color: theme.textSoft, fontSize: 13 }}>
-                      {(item.Brand || "Unknown brand")
+                      {item.Brand || "Unknown brand"}
                     </div>
                   </div>
                 </label>
@@ -600,6 +600,44 @@ function ComparisonView({
   );
 }
 
+function PolymerReferenceView({ theme }) {
+  const rows = Array.isArray(polymerReferenceData) ? polymerReferenceData : [];
+
+  const columns = useMemo(() => {
+    const first = rows[0];
+    return first ? Object.keys(first) : [];
+  }, [rows]);
+
+  return (
+    <SectionCard title="Polymer Reference" theme={theme}>
+      <div style={{ overflowX: "auto" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 900 }}>
+          <thead>
+            <tr>
+              {columns.map((column) => (
+                <th key={column} style={thStyle(theme)}>
+                  {column.replaceAll("_", " ")}
+                </th>
+              ))}
+            </tr>
+          </thead>
+
+          <tbody>
+            {rows.map((row, index) => (
+              <tr key={index}>
+                {columns.map((column) => (
+                  <td key={`${index}-${column}`} style={tdStyle(theme)}>
+                    {row[column] ?? ""}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </SectionCard>
+  );
+}
 
 export default function App() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
