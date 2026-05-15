@@ -43,6 +43,7 @@ const RIGID_METRICS = [
   { key: "Heat_Set_Yield", label: "Heat Set Yield", unit: "Kgf" },
   { key: "Izod_Shock_Break", label: "Izod Shock Break", unit: "Impact Index" },
   { key: "HDT", label: "HDT (Tested)", unit: "°C" },
+  { key: "Min_Bend_Radius", label: "Min Bend Radius", unit: "mm" },
 ];
 
 const FLEXIBLE_METRICS = [
