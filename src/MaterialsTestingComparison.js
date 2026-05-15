@@ -563,7 +563,7 @@ return (
               <input
                 value={comparisonSearch}
                 onChange={(e) => setComparisonSearch(e.target.value)}
-                placeholder="Material or Brand"
+                placeholder="Material or Brand..."
                 style={inputStyle(theme)}
               />
             </label>
