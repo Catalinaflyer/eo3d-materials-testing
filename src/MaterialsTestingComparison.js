@@ -461,14 +461,6 @@ function ComparisonView({
         return `${a.Brand || ""} ${a.Material || ""}`.localeCompare(`${b.Brand || ""} ${b.Material || ""}`);
       }
 
-      if (sortMode === "Polymer") {
-        return `${a.Polymer || ""} ${a.Material || ""}`.localeCompare(`${b.Polymer || ""} ${b.Material || ""}`);
-      }
-
-      if (sortMode === "Color") {
-        return `${a.Color || ""} ${a.Material || ""}`.localeCompare(`${b.Color || ""} ${b.Material || ""}`);
-      }
-
       return `${a.Material || ""} ${a.Brand || ""}`.localeCompare(`${b.Material || ""} ${b.Brand || ""}`);
     });
   }, [materials, sortMode, comparisonSearch]);
@@ -510,9 +502,7 @@ function ComparisonView({
               >
                 <option value="Material">Material</option>
                 <option value="Brand">Brand</option>
-                <option value="Polymer">Polymer</option>
-                <option value="Color">Color</option>
-              </select>
+               </select>
             </label>
 
             <label style={{ display: "grid", gap: 6 }}>
@@ -560,9 +550,6 @@ function ComparisonView({
                     <div style={{ fontWeight: 700 }}>{item.Material}</div>
                     <div style={{ color: theme.textSoft, fontSize: 13 }}>
                       {(item.Brand || "Unknown brand") +
-                        " · " +
-                        (item.Polymer || item._type || "") +
-                        (item.Color ? ` · ${item.Color}` : "")}
                     </div>
                   </div>
                 </label>
@@ -585,22 +572,6 @@ function ComparisonView({
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td style={tdLabelStyle(theme)}>Polymer</td>
-                {selectedData.map((item) => (
-                  <td key={`${item._id}-polymer`} style={tdStyle(theme)}>
-                    {item.Polymer || "NA"}
-                  </td>
-                ))}
-              </tr>
-              <tr>
-                <td style={tdLabelStyle(theme)}>Color</td>
-                {selectedData.map((item) => (
-                  <td key={`${item._id}-color`} style={tdStyle(theme)}>
-                    {item.Color || "NA"}
-                  </td>
-                ))}
-              </tr>
               <tr>
                 <td style={tdLabelStyle(theme)}>Hotend / Bed / Chamber</td>
                 {selectedData.map((item) => (
