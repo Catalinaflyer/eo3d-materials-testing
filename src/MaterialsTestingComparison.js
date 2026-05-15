@@ -447,6 +447,32 @@ function ComparisonView({
   theme,
 }) {
   const metricSet = getMetricSet(materialType);
+  const [sortMode, setSortMode] = useState("Material");
+  const [comparisonSearch, setComparisonSearch] = useState("");
+
+  const sortedMaterials = useMemo(() => {
+    const filtered = materials.filter((item) => {
+      const searchBlob = `${item.Material || ""} ${item.Brand || ""} ${item.Polymer || ""} ${item.Color || ""}`.toLowerCase();
+      return !comparisonSearch.trim() || searchBlob.includes(comparisonSearch.trim().toLowerCase());
+    });
+
+    return [...filtered].sort((a, b) => {
+      if (sortMode === "Brand") {
+        return `${a.Brand || ""} ${a.Material || ""}`.localeCompare(`${b.Brand || ""} ${b.Material || ""}`);
+      }
+
+      if (sortMode === "Polymer") {
+        return `${a.Polymer || ""} ${a.Material || ""}`.localeCompare(`${b.Polymer || ""} ${b.Material || ""}`);
+      }
+
+      if (sortMode === "Color") {
+        return `${a.Color || ""} ${a.Material || ""}`.localeCompare(`${b.Color || ""} ${b.Material || ""}`);
+      }
+
+      return `${a.Material || ""} ${a.Brand || ""}`.localeCompare(`${b.Material || ""} ${b.Brand || ""}`);
+    });
+  }, [materials, sortMode, comparisonSearch]);
+
   const selectedData = materials.filter((item) => selectedMaterials.includes(item._id));
 
   const toggleMaterial = (materialId) => {
@@ -459,27 +485,62 @@ function ComparisonView({
 
   return (
     <SectionCard title="Comparison View" theme={theme}>
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(260px, 320px) 1fr", gap: 18 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "minmax(300px, 380px) 1fr", gap: 18 }}>
         <div
           style={{
             border: `1px solid ${theme.border}`,
             borderRadius: 14,
             background: theme.surfaceAlt,
             padding: 14,
-            maxHeight: 640,
+            maxHeight: 700,
             overflowY: "auto",
           }}
         >
-          <div style={{ fontWeight: 700, marginBottom: 10 }}>Select up to 4 materials</div>
+          <div style={{ fontWeight: 700, marginBottom: 10 }}>
+            Select up to 4 materials
+          </div>
+
+          <div style={{ display: "grid", gap: 10, marginBottom: 12 }}>
+            <label style={{ display: "grid", gap: 6 }}>
+              <span style={{ color: theme.textSoft, fontWeight: 700 }}>Sort by</span>
+              <select
+                value={sortMode}
+                onChange={(e) => setSortMode(e.target.value)}
+                style={inputStyle(theme)}
+              >
+                <option value="Material">Material</option>
+                <option value="Brand">Brand</option>
+                <option value="Polymer">Polymer</option>
+                <option value="Color">Color</option>
+              </select>
+            </label>
+
+            <label style={{ display: "grid", gap: 6 }}>
+              <span style={{ color: theme.textSoft, fontWeight: 700 }}>Search comparison list</span>
+              <input
+                value={comparisonSearch}
+                onChange={(e) => setComparisonSearch(e.target.value)}
+                placeholder="Material, brand, polymer, color..."
+                style={inputStyle(theme)}
+              />
+            </label>
+          </div>
+
+          <div style={{ color: theme.textSoft, fontSize: 13, marginBottom: 10 }}>
+            Selected: {selectedMaterials.length} / 4
+          </div>
+
           <div style={{ display: "grid", gap: 8 }}>
-            {materials.map((item, index) => {
+            {sortedMaterials.map((item, index) => {
               const active = selectedMaterials.includes(item._id);
               return (
-                <button
+                <label
                   key={item._id}
-                  onClick={() => toggleMaterial(item._id)}
                   style={{
-                    textAlign: "left",
+                    display: "grid",
+                    gridTemplateColumns: "auto 1fr",
+                    gap: 10,
+                    alignItems: "start",
                     padding: "10px 12px",
                     borderRadius: 10,
                     border: `1px solid ${active ? getMaterialColor(item, index) : theme.border}`,
@@ -488,11 +549,23 @@ function ComparisonView({
                     cursor: "pointer",
                   }}
                 >
-                  <div style={{ fontWeight: 700 }}>{item.Material}</div>
-                  <div style={{ color: theme.textSoft, fontSize: 13 }}>
-                    {(item.Brand || "Unknown brand") + " · " + (item.Polymer || item._type || "")}
+                  <input
+                    type="checkbox"
+                    checked={active}
+                    onChange={() => toggleMaterial(item._id)}
+                    style={{ marginTop: 3 }}
+                  />
+
+                  <div>
+                    <div style={{ fontWeight: 700 }}>{item.Material}</div>
+                    <div style={{ color: theme.textSoft, fontSize: 13 }}>
+                      {(item.Brand || "Unknown brand") +
+                        " · " +
+                        (item.Polymer || item._type || "") +
+                        (item.Color ? ` · ${item.Color}` : "")}
+                    </div>
                   </div>
-                </button>
+                </label>
               );
             })}
           </div>
@@ -541,13 +614,13 @@ function ComparisonView({
                   <td style={tdLabelStyle(theme)}>
                     {metric.label}{metric.unit ? ` · ${metric.unit}` : ""}
                   </td>
-                 {selectedData.map((item) => (
-                   <td key={`${item._id}-${metric.key}`} style={tdStyle(theme)}>
-                     {formatMetricValue(item[metric.key])}
-                   </td>
-                   ))}
-                 </tr>
-                ))}
+                  {selectedData.map((item) => (
+                    <td key={`${item._id}-${metric.key}`} style={tdStyle(theme)}>
+                      {formatMetricValue(item[metric.key])}
+                    </td>
+                  ))}
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
@@ -556,42 +629,6 @@ function ComparisonView({
   );
 }
 
-function PolymerReferenceView({ theme }) {
-  const rows = Array.isArray(polymerReferenceData) ? polymerReferenceData : [];
-  const columns = useMemo(() => {
-    const first = rows[0];
-    return first ? Object.keys(first) : [];
-  }, [rows]);
-
-  return (
-    <SectionCard title="Polymer Reference" theme={theme}>
-      <div style={{ overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 900 }}>
-          <thead>
-            <tr>
-              {columns.map((column) => (
-                <th key={column} style={thStyle(theme)}>
-                  {column.replaceAll("_", " ")}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, index) => (
-              <tr key={index}>
-                {columns.map((column) => (
-                  <td key={`${index}-${column}`} style={tdStyle(theme)}>
-                    {row[column] ?? ""}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </SectionCard>
-  );
-}
 
 export default function App() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
