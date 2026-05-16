@@ -569,9 +569,38 @@ return (
             </label>
           </div>
 
-          <div style={{ color: theme.textSoft, fontSize: 13, marginBottom: 10 }}>
-            Selected: {selectedMaterials.length} / 4
-          </div>
+          <div
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 10,
+    marginBottom: 10,
+    flexWrap: "wrap",
+  }}
+>
+  <div style={{ color: theme.textSoft, fontSize: 13 }}>
+    Selected: {selectedMaterials.length} / 4
+  </div>
+
+  <button
+    onClick={() => setSelectedMaterials([])}
+    disabled={selectedMaterials.length === 0}
+    style={{
+      padding: "7px 10px",
+      borderRadius: 8,
+      border: `1px solid ${theme.border}`,
+      background: selectedMaterials.length === 0 ? theme.surfaceAlt : theme.button,
+      color: theme.text,
+      cursor: selectedMaterials.length === 0 ? "not-allowed" : "pointer",
+      fontWeight: 700,
+      fontSize: 12,
+      opacity: selectedMaterials.length === 0 ? 0.6 : 1,
+    }}
+  >
+    Clear Selection
+  </button>
+</div>
 
           <div style={{ display: "grid", gap: 8 }}>
             {sortedMaterials.map((item, index) => {
