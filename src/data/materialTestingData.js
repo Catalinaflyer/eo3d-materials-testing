@@ -1530,7 +1530,7 @@ const materialTestingData = [
   },
   
   {
-    Material: "PET-CF",
+    Material: "PET-CF 285",
     MaterialClass: "Polyester",
     Brand: "3D-Fuel",
     Color: "Black",
@@ -1544,10 +1544,53 @@ const materialTestingData = [
     Direct_Thread_Yield: 57.37,
     Heat_Set_Yield: 115.97,
     Izod_Shock_Break: 0.46,
-    HDT: null,
+    HDT: 107.5,
+    Min_Bend_Radius: 25
     Notes: "As Printed",
     color: "#455A64",
   },
+
+  {
+  Material: "PET-CF 305 R",
+  MaterialClass: "Polyester",
+  Brand: "3D-Fuel",
+  Color: "Black",
+  HotendTemp: "305",
+  BedTemp: "105",
+  ChamberTemp: "61.5",
+  X_Axis_Break_Load: 283.00,
+  X_Axis_Yield_Point: 2.46,
+  X_Axis_Break_Point: 2.58,
+  Layer_Break: 106.03,
+  Direct_Thread_Yield: 63.50,
+  Heat_Set_Yield: 127.70,
+  Izod_Shock_Break: 0.30,
+  Min_Bend_Radius: null,
+  HDT: 228.3,
+  Notes: "As Printed",
+  color: "#263238",
+},
+
+{
+  Material: "PET-CF 305 A",
+  MaterialClass: "Polyester",
+  Brand: "3D-Fuel",
+  Color: "Black",
+  HotendTemp: "305",
+  BedTemp: "105",
+  ChamberTemp: "61.5",
+  X_Axis_Break_Load: 331.57,
+  X_Axis_Yield_Point: 2.47,
+  X_Axis_Break_Point: 2.50,
+  Layer_Break: 101.10,
+  Direct_Thread_Yield: 82.50,
+  Heat_Set_Yield: 141.50,
+  Izod_Shock_Break: 0.26,
+  Min_Bend_Radius: null,
+  HDT: 245.0,
+  Notes: "Annealed 105° 90 minutes",
+  color: "#546E7A",
+},
   
 
   // Flexible Materials ##############################################################
