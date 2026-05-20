@@ -1545,7 +1545,7 @@ const materialTestingData = [
     Heat_Set_Yield: 115.97,
     Izod_Shock_Break: 0.46,
     HDT: 107.5,
-    Min_Bend_Radius: 25
+    Min_Bend_Radius: 25,
     Notes: "As Printed",
     color: "#455A64",
   },
