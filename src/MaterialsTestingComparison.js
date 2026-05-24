@@ -366,8 +366,8 @@ function ChartView({
   const topPad = 120;
   const leftPad = 430;
   const rightPad = 110;
-  const rowHeight = 38;
-  const rowGap = 16;
+  const rowHeight = 46;
+  const rowGap = 18;
   const chartWidth = width - leftPad - rightPad;
   const height = Math.max(620, visibleMaterials.length * (rowHeight + rowGap) + 190);
 
@@ -417,13 +417,23 @@ function ChartView({
               <g key={item._id}>
                 <text
                   x={28}
-                  y={y + 24}
+                  y={y + 18}
                   fontSize="18"
                   fill="#111827"
-                  fontWeight="600"
-                >
+                  fontWeight="700"
+              >
                   {shortLabel}
-                </text>
+              </text>
+
+              <text
+                  x={28}
+                  y={y + 38}
+                  fontSize="13"
+                  fill="#4b5563"
+                  fontWeight="500"
+              >
+  {truncateText(item.Notes || "", 42)}
+</text>
 
                 <rect
                   x={leftPad}
