@@ -423,16 +423,24 @@ function ChartView({
                   fontWeight="700"
               >
                   {shortLabel}
-              </text>
-
-              <text
-                  x={28}
-                  y={y + 38}
-                  fontSize="13"
-                  fill="#4b5563"
-                  fontWeight="500"
-              >
-  {truncateText(item.Notes || "", 42)}
+<text
+  x={28}
+  y={y + 38}
+  fontSize="13"
+  fill="#4b5563"
+  fontWeight="500"
+>
+  {truncateText(
+    [
+      item.Notes,
+      `Hotend ${item.HotendTemp || "NA"}°C`,
+      `Bed ${item.BedTemp || "NA"}°C`,
+      item.ChamberTemp ? `Chamber ${item.ChamberTemp}` : null,
+    ]
+      .filter(Boolean)
+      .join(" · "),
+    58
+  )}
 </text>
 
                 <rect
