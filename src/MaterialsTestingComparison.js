@@ -366,7 +366,7 @@ function ChartView({
   const topPad = 120;
   const leftPad = 430;
   const rightPad = 110;
-  const rowHeight = 46;
+  const rowHeight = 62;
   const rowGap = 18;
   const chartWidth = width - leftPad - rightPad;
   const height = Math.max(620, visibleMaterials.length * (rowHeight + rowGap) + 190);
@@ -415,9 +415,9 @@ function ChartView({
 
             return (
               <g key={item._id}>
-               <text
+<text
   x={28}
-  y={y + 18}
+  y={y + 16}
   fontSize="18"
   fill="#111827"
   fontWeight="700"
@@ -427,14 +427,13 @@ function ChartView({
 
 <text
   x={28}
-  y={y + 38}
+  y={y + 36}
   fontSize="13"
   fill="#4b5563"
   fontWeight="500"
 >
   {truncateText(
     [
-      item.Notes,
       `Hotend ${item.HotendTemp || "NA"}°C`,
       `Bed ${item.BedTemp || "NA"}°C`,
       item.ChamberTemp ? `Chamber ${item.ChamberTemp}` : null,
@@ -443,6 +442,16 @@ function ChartView({
       .join(" · "),
     58
   )}
+</text>
+
+<text
+  x={28}
+  y={y + 54}
+  fontSize="13"
+  fill="#4b5563"
+  fontWeight="500"
+>
+  {truncateText(item.Notes || "", 58)}
 </text>
 
                 <rect
@@ -465,7 +474,7 @@ function ChartView({
 
                 <text
                   x={leftPad + chartWidth + 14}
-                  y={y + 24}
+                  y={y + 34}
                   fontSize="18"
                   fill="#111827"
                   fontWeight="600"
