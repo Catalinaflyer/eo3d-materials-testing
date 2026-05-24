@@ -423,7 +423,17 @@ function ChartView({
                   fontWeight="700"
               >
                   {shortLabel}
-<text>
+<text
+  x={28}
+  y={y + 18}
+  fontSize="18"
+  fill="#111827"
+  fontWeight="700"
+>
+  {shortLabel}
+</text>
+
+<text
   x={28}
   y={y + 38}
   fontSize="13"
