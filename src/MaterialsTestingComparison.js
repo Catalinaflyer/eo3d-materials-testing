@@ -36,7 +36,7 @@ const VIEW_OPTIONS = [
 ];
 
 const RIGID_METRICS = [
-  { key: "X_Axis_Break_Load", label: "X Axis Peak Load", unit: "Kgf" },
+  { key: "X_Axis_Peak_Load", label: "X Axis Peak Load", unit: "Kgf" },
   { key: "X_Axis_Yield_Point", label: "X Axis Peak Point", unit: "mm" },
   { key: "X_Axis_Break_Point", label: "X Axis Break Point", unit: "mm" },
   { key: "Layer_Break", label: "Layer Break", unit: "Kgf" },
@@ -768,7 +768,7 @@ export default function App() {
 
   const [view, setView] = useState("chart");
   const [materialType, setMaterialType] = useState("Rigid");
-  const [metricKey, setMetricKey] = useState("X_Axis_Break_Load");
+  const [metricKey, setMetricKey] = useState("X_Axis_Peak_Load");
   const [selectedBrand, setSelectedBrand] = useState("All");
   const [search, setSearch] = useState("");
   const [selectedMaterials, setSelectedMaterials] = useState([]);
