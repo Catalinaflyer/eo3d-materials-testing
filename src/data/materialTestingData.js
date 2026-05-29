@@ -1696,6 +1696,29 @@ const materialTestingData = [
   Notes: "As Printed",
   color: "#FBC02D",
 },
+
+  {
+  Test_ID: "Jayo Galaxy PLA",
+  Condition: "As_Printed",
+  Material: "PLA",
+  MaterialClass: "Aliphatic Polyester",
+  Brand: "Jayo",
+  Color: "Starlit Flow",
+  HotendTemp: 220,
+  BedTemp: 55,
+  ChamberTemp: null,
+  X_Axis_Peak_Load: 178.9,
+  X_Axis_Yield_Point: 2.51,
+  X_Axis_Break_Point: null,
+  Layer_Break: 203.97,
+  Izod_Shock_Break: 0.42,
+  Direct_Thread_Yield: null,
+  Heat_Set_Yield: null,
+  Min_Bend_Radius: null,
+  HDT: null,
+  Notes: null,
+  color: "#7C4DFF",
+},
   
 
   // Flexible Materials ##############################################################
