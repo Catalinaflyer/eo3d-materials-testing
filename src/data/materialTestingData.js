@@ -1723,7 +1723,7 @@ const materialTestingData = [
   {
   Test_ID: "Polymaker ABS PRO",
   Condition: "As_Printed",
-  Material: "ABS",
+  Material: "ABS PRO",
   MaterialClass: "Styrene",
   Brand: "Polymaker",
   Color: "Black",
@@ -1746,7 +1746,7 @@ const materialTestingData = [
 {
   Test_ID: "Polymaker ABS MAX",
   Condition: "As_Printed",
-  Material: "ABS",
+  Material: "ABS MAX",
   MaterialClass: "Styrene",
   Brand: "Polymaker",
   Color: "Black",
