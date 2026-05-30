@@ -1700,7 +1700,7 @@ const materialTestingData = [
   {
   Test_ID: "Jayo Galaxy PLA",
   Condition: "As_Printed",
-  Material: "PLA",
+  Material: "PLA Galaxy",
   MaterialClass: "Aliphatic Polyester",
   Brand: "Jayo",
   Color: "Starlit Flow",
