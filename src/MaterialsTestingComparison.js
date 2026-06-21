@@ -471,17 +471,15 @@ function ChartView({
   fill="#4b5563"
   fontWeight="500"
 >
-  {truncateText(item.Notes || "", 58)}
-</text>
-
-<text
-  x={28}
-  y={y + 54}
-  fontSize="13"
-  fill="#4b5563"
-  fontWeight="500"
->
-  {truncateText(item.Notes || "", 58)}
+  {truncateText(
+    [
+      item.Condition ? item.Condition.replaceAll("_", " ") : null,
+      item.Notes ? item.Notes : null,
+    ]
+      .filter(Boolean)
+      .join(" · "),
+    58
+  )}
 </text>
 
                 <rect
