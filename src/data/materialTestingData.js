@@ -1743,7 +1743,7 @@ const materialTestingData = [
   HDT: 113.1,
   Notes: null,
   color: "#263238",
-}
+},
 
 {
   Test_ID: "Polymaker ABS MAX",
