@@ -366,7 +366,7 @@ function ChartView({
   const topPad = 120;
   const leftPad = 430;
   const rightPad = 110;
-  const rowHeight = 76;
+  const rowHeight = 88;
   const rowGap = 20;
   const chartWidth = width - leftPad - rightPad;
   const height = Math.max(620, visibleMaterials.length * (rowHeight + rowGap) + 190);
