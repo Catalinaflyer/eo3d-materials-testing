@@ -366,8 +366,8 @@ function ChartView({
   const topPad = 120;
   const leftPad = 430;
   const rightPad = 110;
-  const rowHeight = 62;
-  const rowGap = 18;
+  const rowHeight = 76;
+  const rowGap = 20;
   const chartWidth = width - leftPad - rightPad;
   const height = Math.max(620, visibleMaterials.length * (rowHeight + rowGap) + 190);
 
@@ -425,9 +425,29 @@ function ChartView({
   {shortLabel}
 </text>
 
+{metricKey === "X_Axis_Break_Point" && (item.Failure_Location || item.Failure_Mode) && (
+  <text
+    x={28}
+    y={y + 36}
+    fontSize="15"
+    fill="#374151"
+    fontWeight="700"
+  >
+    {truncateText(
+      [
+        item.Failure_Location ? `Location: ${item.Failure_Location}` : null,
+        item.Failure_Mode ? `Mode: ${item.Failure_Mode}` : null,
+      ]
+        .filter(Boolean)
+        .join(" · "),
+      62
+    )}
+  </text>
+)}
+
 <text
   x={28}
-  y={y + 36}
+  y={metricKey === "X_Axis_Break_Point" && (item.Failure_Location || item.Failure_Mode) ? y + 54 : y + 36}
   fontSize="13"
   fill="#4b5563"
   fontWeight="500"
@@ -442,6 +462,16 @@ function ChartView({
       .join(" · "),
     58
   )}
+</text>
+
+<text
+  x={28}
+  y={metricKey === "X_Axis_Break_Point" && (item.Failure_Location || item.Failure_Mode) ? y + 72 : y + 54}
+  fontSize="13"
+  fill="#4b5563"
+  fontWeight="500"
+>
+  {truncateText(item.Notes || "", 58)}
 </text>
 
 <text
