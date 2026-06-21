@@ -1720,10 +1720,10 @@ const materialTestingData = [
   color: "#7C4DFF",
 },
 
-  {
+{
   Test_ID: "Polymaker ABS PRO",
   Condition: "As_Printed",
-  Material: "ABS PRO",
+  Material: "ABS",
   MaterialClass: "Styrene",
   Brand: "Polymaker",
   Color: "Black",
@@ -1733,6 +1733,8 @@ const materialTestingData = [
   X_Axis_Peak_Load: 143.78,
   X_Axis_Yield_Point: 2.35,
   X_Axis_Break_Point: 4.08,
+  Failure_Location: "Radius / Transition",
+  Failure_Mode: "Brittle Snap",
   Layer_Break: 88.6,
   Izod_Shock_Break: 1.27,
   Direct_Thread_Yield: 63.42,
@@ -1741,7 +1743,7 @@ const materialTestingData = [
   HDT: 113.1,
   Notes: null,
   color: "#263238",
-},
+}
 
 {
   Test_ID: "Polymaker ABS MAX",
