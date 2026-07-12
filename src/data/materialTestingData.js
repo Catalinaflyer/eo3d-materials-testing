@@ -1771,7 +1771,7 @@ const materialTestingData = [
 {
   Test_ID: "Jayo PLA+ 2.0",
   Condition: "As_Printed",
-  Material: "PLA",
+  Material: "PLA 2.0",
   MaterialClass: "Aliphatic Polyester",
   Brand: "Jayo",
   Color: "Red",
@@ -1796,7 +1796,7 @@ const materialTestingData = [
 {
   Test_ID: "Jayo Silk PLA+",
   Condition: "As_Printed",
-  Material: "PLA",
+  Material: "PLA+",
   MaterialClass: "Aliphatic Polyester",
   Brand: "Jayo",
   Color: "Light Gold",
@@ -1821,7 +1821,7 @@ const materialTestingData = [
 {
   Test_ID: "Jayo HS PLA Marble",
   Condition: "As_Printed",
-  Material: "PLA",
+  Material: "PLA Marble",
   MaterialClass: "Aliphatic Polyester",
   Brand: "Jayo",
   Color: "Chestnut Brown Marble",
