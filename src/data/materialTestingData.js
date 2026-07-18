@@ -1152,7 +1152,7 @@ const materialTestingData = [
   Layer_Break: 241.37,
   Direct_Thread_Yield: 83.20,
   Heat_Set_Yield: 146.10,
-  Izod_Shock_Break: 22.33,
+  Izod_Shock_Break: 0.52,
   Notes: "As Printed",
   color: "#EC407A",            // distinct accent for PETG
 },
