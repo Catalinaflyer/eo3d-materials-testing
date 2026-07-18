@@ -1842,6 +1842,31 @@ const materialTestingData = [
   Notes: null,
   color: "#B0BEC5",
 },
+
+{
+  Test_ID: "GG3D PETG FLEX",
+  Condition: "As_Printed",
+  Material: "PETG",
+  MaterialClass: "Copolyester",
+  Brand: "GreenGate3D",
+  Color: "Nautral",
+  HotendTemp: 255,
+  BedTemp: 80,
+  ChamberTemp: null,
+  X_Axis_Peak_Load: 183.53,
+  X_Axis_Yield_Point: 4.11,
+  X_Axis_Break_Point: null,
+  Failure_Location: "Gauge Section",
+  Failure_Mode: "Deformed - No Break",
+  Layer_Break: 105.3,
+  Izod_Shock_Break: 0.51,
+  Direct_Thread_Yield: 66.87,
+  Heat_Set_Yield: 83.07,
+  Min_Bend_Radius: null,
+  HDT: "NT",
+  Notes: null,
+  color: "#B0BEC5",
+},
   
 
   // Flexible Materials ##############################################################
