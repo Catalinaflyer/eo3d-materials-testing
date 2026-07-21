@@ -1869,9 +1869,9 @@ const materialTestingData = [
 },
 
 {
-  Test_ID: "Polymaker Mystery",
+  Test_ID: "Polymaker HT_PLA Pro Annealed",
   Condition: "Annealed_110°C_90min",
-  Material: "Mystery",
+  Material: "HT_PLA Pro",
   MaterialClass: "Aliphatic Polyester",
   Brand: "Polymaker",
   Color: "Black",
@@ -1894,9 +1894,9 @@ const materialTestingData = [
 },
 
 {
-  Test_ID: "Polymaker Mystery",
+  Test_ID: "Polymaker HT_PLA Pro As Printed",
   Condition: "As_Printed",
-  Material: "Mystery",
+  Material: "HT_PLA Pro",
   MaterialClass: "Aliphatic Polyester",
   Brand: "Polymaker",
   Color: "Black",
