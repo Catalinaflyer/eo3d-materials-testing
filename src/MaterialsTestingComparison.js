@@ -715,12 +715,25 @@ return (
               <tr>
                 <th style={thStyle(theme)}>Metric</th>
                 {selectedData.map((item) => (
-                  <th key={item._id} style={thStyle(theme)}>
-                    <div>{item.Material}</div>
-                    <div style={{ fontSize: 12, color: theme.textSoft, fontWeight: 500 }}>
-                      {(item.Brand || "Unknown brand") + (item.Color ? ` · ${item.Color}` : "")}
-                    </div>
-                  </th>
+                 <th key={item._id} style={thStyle(theme)}>
+  <div>{item.Material}</div>
+
+  <div style={{ fontSize: 12, color: theme.textSoft, fontWeight: 500 }}>
+    {(item.Brand || "Unknown brand") + (item.Color ? ` · ${item.Color}` : "")}
+  </div>
+
+  <div
+    style={{
+      fontSize: 11,
+      color: theme.textSoft,
+      fontWeight: 500,
+      marginTop: 3,
+      fontStyle: "italic",
+    }}
+  >
+    {item.Condition || item.Notes || "Condition not specified"}
+  </div>
+</th>
                 ))}
               </tr>
             </thead>
