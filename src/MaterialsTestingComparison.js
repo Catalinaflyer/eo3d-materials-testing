@@ -685,12 +685,24 @@ return (
                     style={{ marginTop: 3 }}
                   />
 
-                  <div>
-                    <div style={{ fontWeight: 700 }}>{item.Material}</div>
-                    <div style={{ color: theme.textSoft, fontSize: 13 }}>
-                      {(item.Brand || "Unknown brand") + (item.Color ? ` · ${item.Color}` : "")}
-                    </div>
-                  </div>
+<div>
+  <div style={{ fontWeight: 700 }}>{item.Material}</div>
+
+  <div style={{ color: theme.textSoft, fontSize: 13 }}>
+    {(item.Brand || "Unknown brand") + (item.Color ? ` · ${item.Color}` : "")}
+  </div>
+
+  <div
+    style={{
+      color: theme.textSoft,
+      fontSize: 12,
+      marginTop: 3,
+      fontStyle: "italic",
+    }}
+  >
+    {item.Condition || item.Notes || "Condition not specified"}
+  </div>
+</div>
                 </label>
               );
             })}
