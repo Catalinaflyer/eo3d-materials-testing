@@ -895,7 +895,7 @@ export default function App() {
           >
             <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
               <img
-                src="/eo3d-logo.png"
+                src="/images/eo3d-logo.png"
                 alt="EDGE_OF_3D"
                 style={{ width: 56, height: 56, objectFit: "contain" }}
               />
