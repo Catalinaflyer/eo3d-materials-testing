@@ -908,7 +908,53 @@ export default function App() {
               </div>
             </div>
 
-<div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+<div
+  style={{
+    display: "flex",
+    gap: 10,
+    alignItems: "center",
+    flexWrap: "wrap",
+  }}
+>
+  <a
+    href="https://www.pcbway.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: "flex",
+      alignItems: "center",
+      gap: 8,
+      padding: "7px 10px",
+      borderRadius: 10,
+      border: `1px solid ${theme.border}`,
+      background: theme.surfaceAlt,
+      color: theme.textSoft,
+      textDecoration: "none",
+      cursor: "pointer",
+      whiteSpace: "nowrap",
+    }}
+  >
+    <span
+      style={{
+        fontSize: 14,
+        fontWeight: 700,
+      }}
+    >
+      Powered by
+    </span>
+
+    <img
+      src="/images/pcbway-logo.png"
+      alt="PCBWay"
+      style={{
+        height: 26,
+        width: "auto",
+        display: "block",
+        objectFit: "contain",
+      }}
+    />
+  </a>
+
   <a
     href="https://ko-fi.com/edgeof3d"
     target="_blank"
@@ -924,41 +970,6 @@ export default function App() {
       textDecoration: "none",
       whiteSpace: "nowrap",
     }}
-
-<a
-  href="https://www.pcbway.com/"
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{
-    display: "flex",
-    alignItems: "center",
-    gap: "8px",
-    textDecoration: "none",
-    marginRight: "12px",
-  }}
->
-  <span
-    style={{
-      color: "#9CA3AF",
-      fontSize: "14px",
-      fontWeight: 600,
-      whiteSpace: "nowrap",
-    }}
-  >
-    Powered by
-  </span>
-
-  <img
-    src="/images/pcbway-logo.png"
-    alt="PCBWay"
-    style={{
-      height: "26px",
-      width: "auto",
-      display: "block",
-    }}
-  />
-</a>
-
   >
     Support Testing
   </a>
