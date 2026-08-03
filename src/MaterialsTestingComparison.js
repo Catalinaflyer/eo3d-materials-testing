@@ -924,6 +924,41 @@ export default function App() {
       textDecoration: "none",
       whiteSpace: "nowrap",
     }}
+
+<a
+  href="https://www.pcbway.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    textDecoration: "none",
+    marginRight: "12px",
+  }}
+>
+  <span
+    style={{
+      color: "#9CA3AF",
+      fontSize: "14px",
+      fontWeight: 600,
+      whiteSpace: "nowrap",
+    }}
+  >
+    Powered by
+  </span>
+
+  <img
+    src="/images/pcbway-logo.png"
+    alt="PCBWay"
+    style={{
+      height: "26px",
+      width: "auto",
+      display: "block",
+    }}
+  />
+</a>
+
   >
     Support Testing
   </a>
