@@ -49,8 +49,8 @@ const RIGID_METRICS = [
 
 const FLEXIBLE_METRICS = [
   { key: "Shore_Hardness", label: "Shore Hardness", unit: "Shore A (Tested)" },
-  { key: "Layer_Peak", label: "Layer Peak", unit: "Kgf" },
-  { key: "Flexible_Layer_Break", label: "Flexible Layer Break", unit: "Kgf" },
+  { key: "Layer_Peak", label: "Layer Peak Load", unit: "Kgf" },
+  { key: "Peak_Distance", label: "Peak Distance", unit: "mm" },
   { key: "Dist_Break", label: "Distance to Break", unit: "mm" },
   { key: "Bounce", label: "Bounce", unit: "mm" },
   { key: "Six_mm_Pull", label: "6mm Pull", unit: "Kgf" },
