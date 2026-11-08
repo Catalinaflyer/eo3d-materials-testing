@@ -1937,7 +1937,7 @@ const materialTestingData = [
     Izod_Shock_Break: null,
     Shore_Hardness: 86.7,
     Layer_Peak: 23.15,
-    Flexible_Layer_Break: 23.98,
+    Peak_Distance: 23.98,
     Dist_Break: 31.0,
     Bounce: 238,
     Six_mm_Pull: 38.60,
@@ -1964,7 +1964,7 @@ const materialTestingData = [
     Izod_Shock_Break: null,
     Shore_Hardness: 85.8,
     Layer_Peak: 29.60,
-    Flexible_Layer_Break: 51.29,
+    Peak_Distance: 51.29,
     Dist_Break: 53.99,
     Bounce: 193,
     Six_mm_Pull: 30.70,
@@ -2023,7 +2023,7 @@ const materialTestingData = [
   Layer_Peak: 26.60,
 
   // Did not break -> leave break fields null so it won't plot as a break result
-  Flexible_Layer_Break: null,   // was 26.60, now null
+  Peak_Distance: null,   // was 26.60, now null
   Dist_Break: null,             // NA / no break
 
   Bounce: 165.40,
@@ -2057,7 +2057,7 @@ const materialTestingData = [
   // Flex metrics
   Shore_Hardness: 65.20,
   Layer_Peak: 18.90,
-  Flexible_Layer_Break: 18.90,   // using Layer Peak as best available “layer break” proxy
+  Peak_Distance: 18.90,   // using Layer Peak as best available “layer break” proxy
   Dist_Break: 44.31,
   Bounce: 178.40,
   Six_mm_Pull: 8.77,
@@ -2090,7 +2090,7 @@ const materialTestingData = [
   // Flex metrics
   Shore_Hardness: 90.90,
   Layer_Peak: 53.70,
-  Flexible_Layer_Break: null,     // not provided
+  Peak_Distance: null,     // not provided
   Dist_Break: null,               // NA / did not break
   Bounce: 112.60,
   Six_mm_Pull: 19.30,
@@ -2124,7 +2124,7 @@ const materialTestingData = [
   // Flex metrics
   Shore_Hardness: 95.50,
   Layer_Peak: 52.10,
-  Flexible_Layer_Break: null,     // not provided
+  Peak_Distance: null,     // not provided
   Dist_Break: 12.64,
   Bounce: 120.75,
   Six_mm_Pull: 54.13,
@@ -2158,7 +2158,7 @@ const materialTestingData = [
   // Flex metrics
   Shore_Hardness: 96.00,
   Layer_Peak: 57.40,
-  Flexible_Layer_Break: null,     // not provided
+  Peak_Distance: null,     // not provided
   Dist_Break: 11.70,
   Bounce: 146.40,
   Six_mm_Pull: 39.77,
@@ -2192,7 +2192,7 @@ const materialTestingData = [
   // Flexible metrics
   Shore_Hardness: 93.00,
   Layer_Peak: 42.87,
-  Flexible_Layer_Break: 43.23,
+  Peak_Distance: 43.23,
   Dist_Break: 44.55,
   Bounce: 108.2,
   Six_mm_Pull: 15.63,
