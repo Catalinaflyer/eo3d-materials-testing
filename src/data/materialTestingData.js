@@ -1975,6 +1975,30 @@ const materialTestingData = [
     color: "#26A69A",
   },
 
+// --- Polymaker G-Flex PETG ---
+{
+  Test_ID: "Polymaker 17NOV Launch",
+  Condition: "As Printed",
+  Material: "****",
+  MaterialClass: "Copolyester",
+  Brand: "Polymaker",
+  Color: "Black",
+  HotendTemp: 230,
+  BedTemp: 55,
+  ChamberTemp: "Ambient",
+  Shore_Hardness: null,
+  Layer_Peak: 101.2,
+  Peak_Distance: 23.84,
+  Dist_Break: 25.47,
+  Bounce: 148.33,
+  Pull_6mm: 84,
+  Stretch_60mm: 94.7,
+  Peak_60mm: 59.38,
+  Izod_Break: 3.55,
+  Notes: null,
+  color: "#00897B",
+},
+  
 // --- UPDATED: TPU Air HR 85A (Siraya Tech) - did NOT break ---
 {
   Material: "Roamr TPU Air HR 85A",
