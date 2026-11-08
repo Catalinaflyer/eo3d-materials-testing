@@ -1988,7 +1988,7 @@ const materialTestingData = [
   ChamberTemp: "Ambient",
   Shore_Hardness: null,
   Layer_Peak: 101.2,
-  Peak_Distance: 23.84,
+  Flexible_Layer_Break: 23.84,
   Dist_Break: 25.47,
   Bounce: 148.33,
   Pull_6mm: 84,
