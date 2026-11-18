@@ -1977,10 +1977,10 @@ const materialTestingData = [
 
 // --- Polymaker G-Flex PETG ---
 {
-  Test_ID: "Polymaker 17NOV Launch",
+  Test_ID: "Polymaker G-Flex PETG",
   Condition: "As Printed",
-  Material: "****",
-  MaterialClass: "****",
+  Material: "PETG",
+  MaterialClass: "Copolyester",
   Brand: "Polymaker",
   Color: "Black",
   HotendTemp: 230,
